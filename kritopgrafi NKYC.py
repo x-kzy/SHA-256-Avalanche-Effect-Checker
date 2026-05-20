@@ -1,5 +1,4 @@
 import hashlib
-
 def text_to_bytes(text):
     return text.encode("utf-8")
 
