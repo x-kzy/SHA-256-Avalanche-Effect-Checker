@@ -36,36 +36,53 @@ Input X : b
 Input Y : c
 ```
 
-Hasil yang diharapkan:
-* Output hash mengalami perubahan besar di kisaran ±128 bit atau sekitar 50%.
 # 2. Eksperimen Ekstrem NKYC (Perbedaan Puluhan Bit)
 Input:
 ```text
 Input X : Siang
 Input Y : Malam
 ```
-Walaupun input berubah secara drastis, hasil hash tetap menunjukkan distribusi perubahan yang stabil di sekitar 50%, bukan berubah total menjadi 100%.
 
-# Contoh Tampilan CLI
+**# Contoh OUTPUT**
 ```text
+=============================================
+        Avalanche Effect SHA-256
+=============================================
+Pilih salah 1:
+1. Mulai Eksperimen
+2. Selesai
+     Made by Havidz Andrian-231111899
+=============================================
+Masukkan pilihan (1/2): 1
+
+=== Mulai Eksperimen Avalanche Effect SHA-256 ===
+Masukkan X: Havidz23
+Masukkan Y: havidz23
+
 === DATA INPUT ===
-X                : 'b'
-Y                : 'c'
-Biner X          : 01100010
-Biner Y          : 01100011
+X                : 'Havidz23'
+Y                : 'havidz23'
+Biner X          : 01001000 01100001 01110110 01101001 01100100 01111010 00110010 00110011
+Biner Y          : 01101000 01100001 01110110 01101001 01100100 01111010 00110010 00110011
 Perbedaan input  : 1 bit
 
 === HASH SHA-256 ===
-... (Tampilan biner 256 bit) ...
+h(X) hex         : d893fef2dd8fab42b25950a55ca5733008d057b7fbf1da7005a5bfafed754f6f
+h(Y) hex         : 0d1ec4ab4b85d47d8c1c1768fa9f80a30684ad9aeb8841b9c51412859b8a1f76
+h(X) biner 256   : 11011000 10010011 11111110 11110010 11011101 10001111 10101011 01000010 10110010 01011001 01010000 10100101 01011100 10100101 01110011 00110000 00001000 11010000 01010111 10110111 11111011 11110001 11011010 01110000 00000101 10100101 10111111 10101111 11101101 01110101 01001111 01101111
+h(Y) biner 256   : 00001101 00011110 11000100 10101011 01001011 10000101 11010100 01111101 10001100 00011100 00010111 01101000 11111010 10011111 10000000 10100011 00000110 10000100 10101101 10011010 11101011 10001000 01000001 10111001 11000101 00010100 00010010 10000101 10011011 10001010 00011111 01110110
 
 === HASIL PERBANDINGAN ===
-Jumlah bit beda (jBeda) : 133 bit dari 256 bit
-Persentase beda         : 51.95%
+Jumlah bit beda (jBeda) : 134 bit dari 256 bit
+Persentase beda         : 52.34%
 
 === KESIMPULAN ===
 Pada percobaan ini, perubahan 1 bit pada input menghasilkan
-133 bit berbeda (51.95%) pada output hash SHA-256.
-Hasil tersebut menunjukkan bahwa algoritma SHA-256 memiliki
-Avalanche Effect yang sangat baik, karena perubahan kecil pada
-input menghasilkan perubahan besar dan acak pada output hash.
+134 bit berbeda (52.34%) pada output hash SHA-256.
+Hasil ini menunjukkan adanya avalanche effect, karena perubahan
+kecil pada input (1 bit) menghasilkan perubahan besar pada output.
+Secara teori, nilai ideal avalanche effect pada SHA-256 adalah
+sekitar 128 dari 256 bit (50%). Hasil percobaan ini sebesar
+134 bit (52.34%) masih berada dalam kisaran yang wajar,
+mengingat sifat probabilistik dari fungsi hash.
 ```
