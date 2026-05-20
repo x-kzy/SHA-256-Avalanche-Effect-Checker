@@ -64,7 +64,6 @@ Persentase beda         : 51.95%
 === KESIMPULAN ===
 Pada percobaan ini, perubahan 1 bit pada input menghasilkan
 133 bit berbeda (51.95%) pada output hash SHA-256.
-
 Hasil tersebut menunjukkan bahwa algoritma SHA-256 memiliki
 Avalanche Effect yang sangat baik, karena perubahan kecil pada
 input menghasilkan perubahan besar dan acak pada output hash.
